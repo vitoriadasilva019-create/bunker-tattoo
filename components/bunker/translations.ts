@@ -24,6 +24,8 @@ export interface Artist {
   name: string
   spec: string
   bio: string
+  photo?: string
+  photoAlt?: string
 }
 
 interface Dictionary {
@@ -208,11 +210,11 @@ export const translations: Record<Lang, Dictionary> = {
           filter: 'contrast-105 brightness-95',
         },
         {
-          src: '/images/obra-girassol.png',
-          alt: 'Colorful sunflower tattoo with a signature-shaped stem on the forearm',
+          src: '/images/obra-gladiator.jpeg',
+          alt: 'Black and grey realism gladiator tattoo in progress on the arm',
           obra: 'Piece VI',
-          title: 'To Bloom',
-          style: 'Fine Line',
+          title: 'The Gladiator',
+          style: 'Realism',
           filter: 'contrast-105 brightness-95',
         },
       ],
@@ -230,6 +232,8 @@ export const translations: Record<Lang, Dictionary> = {
           name: 'Lewis Green',
           spec: 'Fine Line / Realism',
           bio: "Lewis was born and raised in Cuiabá, Brazil, with art running through his veins. For 12 years he has turned skin into works of art and immortalized stories, always obsessed with detail. Outside the studio, he's a bass player — because talent like this can't be confined to a single instrument. Line or note, the result is always the same: art that resonates.",
+          photo: '/images/lewis-green.png',
+          photoAlt: 'Portrait of Lewis Green',
         },
       ],
     },
@@ -367,11 +371,11 @@ export const translations: Record<Lang, Dictionary> = {
           filter: 'contrast-105 brightness-95',
         },
         {
-          src: '/images/obra-girassol.png',
-          alt: 'Tatuagem colorida de girassol com caule em forma de assinatura no antebraço',
+          src: '/images/obra-gladiator.jpeg',
+          alt: 'Tatuagem de gladiador em realismo preto e cinza em andamento no braço',
           obra: 'Obra VI',
-          title: 'Florescer',
-          style: 'Fine Line',
+          title: 'The Gladiator',
+          style: 'Realismo',
           filter: 'contrast-105 brightness-95',
         },
       ],
@@ -389,6 +393,8 @@ export const translations: Record<Lang, Dictionary> = {
           name: 'Lewis Green',
           spec: 'Fine Line / Realism',
           bio: 'Lewis nasceu e cresceu na cidade de Cuiabá, no Brasil, com a arte correndo nas veias. Há 12 anos transforma pele em obra de arte e eterniza histórias, sempre obcecado pelo detalhe. Fora do estúdio, é baixista, porque talento assim não cabe só num instrumento. Linha ou nota, o resultado é sempre o mesmo: arte que ressoa.',
+          photo: '/images/lewis-green.png',
+          photoAlt: 'Retrato de Lewis Green',
         },
       ],
     },
