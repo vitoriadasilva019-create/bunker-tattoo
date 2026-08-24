@@ -404,15 +404,28 @@ export function BunkerLanding() {
                 key={artist.name}
                 className="group grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center"
               >
-                {/* Placeholder monogram — no photo yet */}
                 <div className="aspect-[3/4] w-full max-w-sm mx-auto overflow-hidden bg-zinc-950 relative rounded-sm border border-zinc-900 flex flex-col items-center justify-center">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-gold/5 rounded-full blur-[80px] pointer-events-none" />
-                  <span className="relative z-10 text-7xl md:text-8xl font-display font-extralight text-zinc-700 tracking-widest select-none">
-                    {artist.initials}
-                  </span>
-                  <span className="relative z-10 text-[0.6rem] tracking-[0.35em] uppercase text-zinc-600 font-light mt-4">
-                    {t.artistsSection.portraitSoon}
-                  </span>
+                  {artist.photo ? (
+                    <>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={artist.photo || '/placeholder.svg'}
+                        alt={artist.photoAlt || artist.name}
+                        className="absolute inset-0 w-full h-full object-cover grayscale contrast-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-gold/5 rounded-full blur-[80px] pointer-events-none" />
+                      <span className="relative z-10 text-7xl md:text-8xl font-display font-extralight text-zinc-700 tracking-widest select-none">
+                        {artist.initials}
+                      </span>
+                      <span className="relative z-10 text-[0.6rem] tracking-[0.35em] uppercase text-zinc-600 font-light mt-4">
+                        {t.artistsSection.portraitSoon}
+                      </span>
+                    </>
+                  )}
                   <div className="absolute bottom-6 left-6 z-20">
                     <span className="text-xs text-gold uppercase tracking-widest font-light block mb-1">
                       {artist.index}
