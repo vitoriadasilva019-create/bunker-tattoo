@@ -2,7 +2,7 @@ import Script from 'next/script'
 
 // 1. Substitua o valor abaixo pelo ID do seu Pixel do Facebook.
 //    Você encontra em: Gerenciador de Eventos > Fontes de dados > seu Pixel.
-const FACEBOOK_PIXEL_ID = 'SEU_PIXEL_ID_AQUI'
+const FACEBOOK_PIXEL_ID = '3210722695789331'
 
 export function FacebookPixel() {
   // Enquanto o ID não for preenchido, o pixel não é carregado.
