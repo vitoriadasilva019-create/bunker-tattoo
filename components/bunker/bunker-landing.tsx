@@ -7,6 +7,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useBunkerAnimations } from './use-bunker-animations'
 import { translations, type Lang } from './translations'
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void
+  }
+}
+
 export function BunkerLanding() {
   useBunkerAnimations()
 
@@ -15,6 +21,14 @@ export function BunkerLanding() {
   const t = translations[lang]
 
   const cursorRef = useRef<HTMLDivElement>(null)
+
+  // Fire the Meta Pixel "Schedule" conversion event when the user clicks the
+  // booking CTA. The link still navigates normally afterwards.
+  const handleBookingClick = () => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+      window.fbq('track', 'Schedule')
+    }
+  }
 
   // Custom luxury cursor
   useEffect(() => {
@@ -484,6 +498,7 @@ export function BunkerLanding() {
               href="https://app.bunkerbarbershopusa.com/booking"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleBookingClick}
               className="inline-flex items-center space-x-4 bg-zinc-950/80 border border-gold/40 text-gold hover:text-black hover:bg-gold px-8 py-5 text-sm uppercase tracking-[0.3em] font-light transition-all duration-500 group rounded-sm shadow-xl shadow-gold/5"
             >
               <span>{t.cta.button}</span>
