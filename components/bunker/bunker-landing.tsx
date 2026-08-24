@@ -283,7 +283,7 @@ export function BunkerLanding() {
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-700 z-10" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/close-02.jpeg"
+                src="/images/obra-gladiator.jpeg"
                 alt={t.immersion.frame2Title}
                 className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700 contrast-105 brightness-95"
               />
