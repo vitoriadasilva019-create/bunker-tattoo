@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Syne } from 'next/font/google'
+import { FacebookPixel } from '@/components/facebook-pixel'
 import './globals.css'
 
 const inter = Inter({
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={`scroll-smooth bg-dark ${inter.variable} ${syne.variable}`}
     >
       <body className="bg-dark text-silver font-sans antialiased selection:bg-gold selection:text-dark">
+        <FacebookPixel />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
