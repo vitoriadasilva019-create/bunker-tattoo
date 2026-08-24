@@ -38,8 +38,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`scroll-smooth bg-dark ${inter.variable} ${syne.variable}`}
     >
-      <body className="bg-dark text-silver font-sans antialiased selection:bg-gold selection:text-dark">
+      <head>
         <FacebookPixel />
+      </head>
+      <body className="bg-dark text-silver font-sans antialiased selection:bg-gold selection:text-dark">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
